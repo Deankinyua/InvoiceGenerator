@@ -83,6 +83,7 @@ defmodule InvoiceGeneratorWeb do
   defp html_helpers do
     quote do
       # Translation
+      use Tremorx
       use Gettext, backend: InvoiceGeneratorWeb.Gettext
 
       # HTML escaping functionality

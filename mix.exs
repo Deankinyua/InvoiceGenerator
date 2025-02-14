@@ -32,6 +32,7 @@ defmodule InvoiceGenerator.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:tremorx, git: "https://github.com/briankariuki/tremorx.git"},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:sobelow, "~> 0.13", only: [:dev, :test], runtime: false},
       {:phoenix, "~> 1.7.18"},
@@ -40,7 +41,7 @@ defmodule InvoiceGenerator.MixProject do
       {:postgrex, ">= 0.0.0"},
       {:phoenix_html, "~> 4.1"},
       {:phoenix_live_reload, "~> 1.2", only: :dev},
-      {:phoenix_live_view, "~> 1.0.0"},
+      {:phoenix_live_view, "~> 1.0.0-rc.1", override: true},
       {:floki, ">= 0.30.0", only: :test},
       {:phoenix_live_dashboard, "~> 0.8.3"},
       {:esbuild, "~> 0.8", runtime: Mix.env() == :dev},
