@@ -32,6 +32,7 @@ defmodule InvoiceGenerator.MixProject do
   # Type `mix help deps` for examples and options.
   defp deps do
     [
+      {:phoenix_swoosh, "~> 1.0"},
       {:tremorx, git: "https://github.com/briankariuki/tremorx.git"},
       {:credo, "~> 1.7", only: [:dev, :test], runtime: false},
       {:sobelow, "~> 0.13", only: [:dev, :test], runtime: false},
