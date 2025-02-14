@@ -10,16 +10,20 @@ defmodule InvoiceGeneratorWeb.WelcomeLive.Index do
     ~H"""
     <div class="flex flex-col items-center border border-red-400">
       <section class="flex flex-col items-center justify-between gap-10 border border-red-400 h-screen py-12">
-        <div>
+        <div class="flex flex-row justify-center gap-20 border border-blue-400 w-full">
           <section>logo</section>
           <section>Invoice</section>
         </div>
-        <div>Sign in to Invoice</div>
-        <div>
-          Sign in with Google
+        <div class="w-full">Sign in to Invoice</div>
+        <div class="flex flex-row justify-center gap-10 w-full">
+          <section>google logo</section>
+          <section>Sign in with Google</section>
         </div>
-        <div>Continue with email</div>
-        <div>
+        <div class="flex flex-row justify-center gap-10 w-full">
+          <section>email logo</section>
+          <section>Continue with email</section>
+        </div>
+        <div class="w-[70%] border border-green-400">
           By creating an account, you agree to Invoice company's
           <span class="font-bold">Terms of use</span>
           and <span class="font-bold">Privacy Policy</span>
