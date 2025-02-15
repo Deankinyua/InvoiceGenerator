@@ -18,7 +18,8 @@ defmodule InvoiceGeneratorWeb.UserRegistrationLive do
         </:subtitle>
       </.header>
 
-      <.simple_form
+      <.form
+        :let={f}
         for={@form}
         id="registration_form"
         phx-submit="save"
@@ -34,12 +35,28 @@ defmodule InvoiceGeneratorWeb.UserRegistrationLive do
         <.input field={@form[:name]} type="text" label="Name" required />
         <.input field={@form[:username]} type="text" label="Username" required />
         <.input field={@form[:email]} type="email" label="Email" required />
-        <.input field={@form[:password]} type="password" label="Password" required />
 
-        <:actions>
-          <.button phx-disable-with="Creating account..." class="w-full">Create an account</.button>
-        </:actions>
-      </.simple_form>
+        <Layout.col class="space-y-1.5">
+          <label for="password">
+            <Text.text class="text-tremor-content">
+              Password
+            </Text.text>
+          </label>
+
+          <Input.text_input
+            id="password"
+            name="user[password]"
+            placeholder="***********"
+            type="password"
+            field={@form[:password]}
+            value={@form[:password].value}
+          />
+        </Layout.col>
+
+        <Button.button type="submit" size="xl" class="mt-4" phx-disable-with="Creating account...">
+          Create an account
+        </Button.button>
+      </.form>
     </div>
     """
   end

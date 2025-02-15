@@ -17,7 +17,22 @@ defmodule InvoiceGeneratorWeb.UserLoginLive do
 
       <.simple_form for={@form} id="login_form" action={~p"/users/log_in"} phx-update="ignore">
         <.input field={@form[:email]} type="email" label="Email" required />
-        <.input field={@form[:password]} type="password" label="Password" required />
+        <Layout.col class="space-y-1.5">
+          <label for="password">
+            <Text.text class="text-tremor-content">
+              Password
+            </Text.text>
+          </label>
+
+          <Input.text_input
+            id="password"
+            name="user[password]"
+            placeholder="***********"
+            type="password"
+            field={@form[:password]}
+            value={@form[:password].value}
+          />
+        </Layout.col>
 
         <:actions>
           <.input field={@form[:remember_me]} type="checkbox" label="Keep me logged in" />
