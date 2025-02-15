@@ -21,7 +21,6 @@ defmodule InvoiceGeneratorWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
-    live "/welcome", WelcomeLive.Index
     # live "/welcome", WelcomeLive.Index
   end
 
@@ -68,6 +67,7 @@ defmodule InvoiceGeneratorWeb.Router do
 
     live_session :require_authenticated_user,
       on_mount: [{InvoiceGeneratorWeb.UserAuth, :ensure_authenticated}] do
+      live "/welcome", WelcomeLive.Index
       live "/users/settings", UserSettingsLive, :edit
       live "/users/settings/confirm_email/:token", UserSettingsLive, :confirm_email
     end

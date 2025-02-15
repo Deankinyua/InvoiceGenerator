@@ -39,7 +39,7 @@ defmodule InvoiceGenerator.Accounts.User do
   """
   def registration_changeset(user, attrs, opts \\ []) do
     user
-    |> cast(attrs, [:email, :password])
+    |> cast(attrs, [:name, :username, :email, :password])
     |> validate_email(opts)
     |> validate_password(opts)
     |> validate_name_and_username(opts)
@@ -56,7 +56,7 @@ defmodule InvoiceGenerator.Accounts.User do
   defp validate_password(changeset, opts) do
     changeset
     |> validate_required([:password])
-    |> validate_length(:password, min: 12, max: 72)
+    |> validate_length(:password, min: 7, max: 72)
     # Examples of additional password validation:
     # |> validate_format(:password, ~r/[a-z]/, message: "at least one lower case character")
     # |> validate_format(:password, ~r/[A-Z]/, message: "at least one upper case character")
@@ -67,8 +67,8 @@ defmodule InvoiceGenerator.Accounts.User do
   defp validate_name_and_username(changeset, opts) do
     changeset
     |> validate_required([:name, :username])
-    |> validate_length(:name, min: 5, max: 60)
-    |> validate_length(:username, min: 5, max: 60)
+    |> validate_length(:name, min: 4, max: 60)
+    |> validate_length(:username, min: 4, max: 60)
     |> maybe_validate_unique_username(opts)
   end
 
