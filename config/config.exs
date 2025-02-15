@@ -31,6 +31,22 @@ config :invoice_generator, InvoiceGeneratorWeb.Endpoint,
 # at the `config/runtime.exs`.
 config :invoice_generator, InvoiceGenerator.Mailer, adapter: Swoosh.Adapters.Local
 
+# config :invoice_generator, InvoiceGenerator.Mailer,
+#   adapter: Swoosh.Adapters.SMTP,
+#   relay: "smtp.avengers.com",
+#   username: "tonystark",
+#   password: "ilovepepperpotts",
+#   ssl: true,
+#   tls: :always,
+#   auth: :always,
+#   port: 1025,
+#   dkim: [
+#     s: "default", d: "domain.com",
+#     private_key: {:pem_plain, File.read!(Path.absname("priv/keys/domain.private"))}
+#   ],
+#   retries: 2,
+#   no_mx_lookups: false
+
 # Configure esbuild (the version is required)
 config :esbuild,
   version: "0.17.11",

@@ -14,16 +14,20 @@ defmodule InvoiceGeneratorWeb.WelcomeLive.Index do
           <section><img src="images/mobilelogo.svg" /></section>
           <section class="font-semibold text-[#7c5dfa] text-5xl">Invoice</section>
         </div>
-        <div class="w-full flex flex-col items-center border border-red-400 mb-20">
+        <div class="w-full flex flex-col items-center border border-red-400 mb-20 text-2xl font-semibold">
           Sign in to Invoice
         </div>
-        <div class="flex flex-row justify-center items-center gap-10 w-full border border-red-400 mb-10">
-          <section><img src="images/googlesmall.svg" /></section>
-          <section>Sign in with Google</section>
+        <div class="flex flex-row justify-center items-center gap-6 w-[75%] mb-10 border border-red-400">
+          <section class="border border-blue-400 w-6">
+            <img class="object-cover" src="images/googlesmall.svg" />
+          </section>
+          <section class="text-lg border border-blue-400">Sign in with Google</section>
         </div>
-        <div class="flex flex-row justify-center items-center gap-10 w-full mb-14">
-          <section><img src="images/email.svg" /></section>
-          <section>Continue with email</section>
+        <div class="flex flex-row justify-center items-center gap-6 w-full mb-14 w-[75%]">
+          <section class="border border-blue-400 w-6">
+            <img class="object-cover" width="60" src="images/email.svg" />
+          </section>
+          <section class="text-lg">Continue with email</section>
         </div>
         <div class="w-[68%] border border-green-400">
           By creating an account, you agree to Invoice company's

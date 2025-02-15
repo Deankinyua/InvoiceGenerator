@@ -19,6 +19,7 @@ defmodule InvoiceGeneratorWeb.Router do
 
     get "/", PageController, :home
     live "/welcome", WelcomeLive.Index
+    # live "/welcome", WelcomeLive.Index
   end
 
   # Other scopes may use custom stacks.
