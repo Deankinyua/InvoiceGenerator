@@ -23,12 +23,16 @@ defmodule InvoiceGeneratorWeb.WelcomeLive.Index do
           </section>
           <section class="text-lg border border-blue-400">Sign in with Google</section>
         </div>
-        <div class="flex flex-row justify-center items-center gap-6 w-full mb-14 w-[75%]">
+        <.link
+          class="flex flex-row justify-center items-center gap-6 w-full mb-14 w-[75%]"
+          patch={~p"/users/register"}
+        >
           <section class="border border-blue-400 w-6">
             <img class="object-cover" width="60" src="images/email.svg" />
           </section>
           <section class="text-lg">Continue with email</section>
-        </div>
+        </.link>
+
         <div class="w-[68%] border border-green-400">
           By creating an account, you agree to Invoice company's
           <span class="font-bold">Terms of use</span>
@@ -42,5 +46,9 @@ defmodule InvoiceGeneratorWeb.WelcomeLive.Index do
   @impl true
   def mount(_params, _session, socket) do
     {:ok, socket}
+  end
+
+  def handle_params(params, _url, socket) do
+    {:noreply, socket}
   end
 end

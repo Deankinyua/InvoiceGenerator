@@ -32,13 +32,25 @@ defmodule InvoiceGeneratorWeb.UserRegistrationLive do
           Oops, something went wrong! Please check the errors below.
         </.error>
 
-        <.input field={@form[:name]} type="text" label="Name" required />
-        <.input field={@form[:username]} type="text" label="Username" required />
-        <.input field={@form[:email]} type="email" label="Email" required />
+        <.input field={@form[:name]} type="text" label="Name" placeholder="Enter Your Name" required />
+        <.input
+          field={@form[:username]}
+          type="text"
+          label="Username"
+          placeholder="Enter Your Username"
+          required
+        />
+        <.input
+          field={@form[:email]}
+          type="email"
+          label="Email"
+          placeholder="Enter Your Email"
+          required
+        />
 
         <Layout.col class="space-y-1.5">
           <label for="password">
-            <Text.text class="text-tremor-content">
+            <Text.text class="text-tremor-content font-extrabold text-black">
               Password
             </Text.text>
           </label>
@@ -46,7 +58,7 @@ defmodule InvoiceGeneratorWeb.UserRegistrationLive do
           <Input.text_input
             id="password"
             name="user[password]"
-            placeholder="***********"
+            placeholder="Enter Your Password"
             type="password"
             field={@form[:password]}
             value={@form[:password].value}
@@ -54,9 +66,21 @@ defmodule InvoiceGeneratorWeb.UserRegistrationLive do
         </Layout.col>
 
         <Button.button type="submit" size="xl" class="mt-4" phx-disable-with="Creating account...">
-          Create an account
+          Sign Up
         </Button.button>
       </.form>
+
+      <Layout.flex class="space-x-2 underline cursor-pointer decoration-2" justify_content="start">
+        <Text.subtitle color="gray">
+          Already have an account?
+        </Text.subtitle>
+
+        <a href="/users/log_in" class="cursor-pointer decoration-2 text-blue-400">
+          <Text.subtitle color="blue">
+            Login
+          </Text.subtitle>
+        </a>
+      </Layout.flex>
     </div>
     """
   end
